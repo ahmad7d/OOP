@@ -1,0 +1,32 @@
+abedalk.nassar,ahmad_dall7
+207063108,324059856
+
+Tree Package
+
+This package simulates trees and broader flora within a gaming environment, enhancing the natural
+landscape with dynamic interactions.
+
+Classes
+
+    Tree: Generates a single randomized tree with fruits, leaves, and a trunk.
+    Trunk: Represents the core structure of the tree, handling position, size, and rendering.
+    Fruit: Manages fruits on trees, including creation, placement, and interaction.
+    Leaf: Controls foliage generation, arrangement, and dynamic behaviors like fluttering.
+    Flora: Generates multiple trees within a specified range, enriching the environment.
+
+Interface
+
+    ObserverOfJump: Facilitates avatar-environment communication, triggering responses when the avatar jumps.
+
+Dynamics
+
+    Tree and Flora: Populate the game world with diverse ecosystems.
+    ObserverOfJump: Enhances interactivity by reacting to player actions, like jumping.
+
+Design Patterns
+
+    Utilizes Observer pattern through ObserverOfJump, creating dynamic interactions between avatar
+    and environment.
+
+This package offers a versatile framework for creating lifelike game environments with interactive
+natural elements.
