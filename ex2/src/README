@@ -1,0 +1,133 @@
+ahmad_dall7,abedalk.nassar
+324059856,207063108
+
+1) In the BrickerGameManager class, I enabled the avoidance of bricks in the game by introducing a "Brick"
+ class that represents individual bricks in the game environment. This class allows for dynamic manipulation
+ of bricks, including hiding them during gameplay.
+
+The advantages of this design choice include:
+
+Dynamic Gameplay: Players can dynamically interact with the game environment by hiding certain bricks,
+ potentially altering the difficulty or strategy required to progress through the game.
+
+Customization: The ability to hide bricks provides a level of customization to gameplay, allowing players
+ or level designers to create unique challenges or experiences.
+
+Replayability: By allowing bricks to be hidden, the game can offer increased replayability
+ as players explore different strategies or approaches to overcoming challenges.
+
+However, there are also some disadvantages to this design choice:
+
+Complexity: Introducing the ability to hide bricks adds complexity to the codebase,
+ requiring additional logic to manage the visibility of bricks and ensure consistent gameplay mechanics.
+
+Balancing Challenges: Hiding bricks could potentially introduce balancing challenges, as players may exploit
+ hidden brick configurations to gain unfair advantages or bypass intended gameplay challenges.
+
+Overall, while enabling the avoidance of bricks adds depth and flexibility to the game,
+ it also requires careful consideration of balance and implementation to ensure a fair and enjoyable
+ gameplay experience.
+
+
+
+2) In the implementation of the player's life display, both graphically and numerically,
+ the following classes were added:
+
+Heart Class: This class represents a single heart icon,
+ typically used to visually represent a life or health
+ point in games. It is responsible for rendering the heart image on the game screen. The Heart class handles
+ the graphical representation of each life count.
+
+FallingHeart Class: This class extends the Heart class and adds
+ the functionality of animating the heart icon
+ when it falls out of the game area. It's responsible for
+ managing the animation of hearts falling out when a
+ player loses a life.
+
+BrickerGameManager Class: This is the bricker.main game manager class responsible for orchestrating
+ the entire game.
+ In this class, the player's life count is managed using an array of Heart objects.
+ It initializes and updates the graphical and numerical representation of the player's life count.
+
+Counter Class: This class is used to keep track of the player's remaining lives numerically.
+ It increments or decrements the life count as the player gains or loses lives during gameplay.
+
+Here's how the implementation works:
+
+The BrickerGameManager class initializes an array of Heart objects to represent the player's life count
+ graphically. Each heart icon corresponds to one life.
+
+When the player loses a life, the decreaseLives() method in the BrickerGameManager class is called.
+ This method decrements the life count and removes the corresponding Heart object from the array.
+
+The remaining life count is also displayed numerically using the Counter class. This class tracks the
+ numerical value of the player's remaining lives and updates it accordingly.
+
+The FallingHeart class manages the animation of hearts falling out of the game area when the player loses a
+ life. It adds visual feedback to the player indicating the loss of a life.
+
+In summary, the Heart, FallingHeart, Counter, and BrickerGameManager classes work together to implement
+ both the graphical and numerical display of the player's life count, providing
+ a comprehensive representation of the player's status in the game.
+
+
+
+3) To incorporate the probability for each strategy, where each strategy has a 1/10 chance of being
+ selected except the removal strategy, the following steps can be implemented:
+
+Extra Paddle Strategy: This strategy involves adding an extra paddle to the game. The implementation
+ includes a check within the random selection logic to instantiate an extra paddle object with a
+ probability of 1/10.
+
+Extra Puck Strategy: Similar to the extra paddle strategy, the implementation involves adding logic
+ to create an additional puck object with a 1/10 probability when this strategy is selected.
+
+Camera Switch Strategy: For this strategy, the implementation includes logic to switch camera
+ perspectives or behavior with a 1/10 chance of being selected during gameplay.
+
+Normal Strategy (Removing the Brick): Unlike the other strategies, this one represents the default
+ behavior of removing bricks from the game. It's not subject to the 1/10 probability and instead
+ is the default action upon collision between the ball and bricks.
+
+To implement the probability distribution, a random number generator can be utilized, generating
+ a random number between 1 and 10. Based on this random number, each strategy can be selected
+ with an equal probability of 1/10, except for the removal strategy, which is the default action.
+
+The classes involved in managing the strategies would handle the selection and execution of
+ the chosen strategy based on the randomly generated number. Each strategy's implementation
+ would be encapsulated within its respective class, facilitating modular and maintainable code.
+
+
+
+4) To implement the double strategy and limit the number of behaviors in the code effectively,
+ the following approach was employed:
+
+Probability Distribution: Initially, each strategy has a 1/10 probability of being selected.
+ To introduce the double strategy, an additional logic layer was added. After selecting a
+ random strategy with a 1/10 probability, another random number between 1 and 5 was generated
+ to determine if the chosen strategy should trigger the double strategy.
+
+Checking for Double Strategy: If the second random number indicates a double strategy, it
+ means that the current selected strategy will be executed twice. To maintain fairness and
+ balance in gameplay, only one additional behavior is introduced in the case of a double 
+strategy. Therefore, another random selection among the available strategies
+ (puck, life, paddle, camera) is made.
+
+Limiting Behavior Selection: If neither of the two random numbers results in a double strategy,
+ two additional behaviors are selected from the available options. This approach ensures that
+ the total probability of selecting additional behaviors remains within the desired bounds
+ (1/10 * 1/5 for the double strategy case and 1/10 * 4/5 for the standard case).
+
+Design of the Code: The code design includes clear separation of concerns, encapsulating the
+ logic for behavior selection and execution within their respective classes. The random number
+ generation and decision-making processes are well-defined, promoting code readability
+ and maintainability.
+
+By implementing the double strategy and limiting the number of behaviors with precise probability
+ calculations, the gameplay experience remains balanced and engaging for the player.
+ The code design ensures flexibility and scalability, facilitating future enhancements
+ and modifications to the behavior selection mechanism.
+
+5) no changes made...
+
+
