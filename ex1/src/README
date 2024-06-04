@@ -1,0 +1,13 @@
+ahmad_dall7
+324059856
+
+Whatever strategy : picking legal random coordinate from the whole board , whenever the board is bigger
+there's less probability to win .
+
+Clever player strategy : starting a sequence of the mark from the 0,0 coordinates , Clever player will always
+win Whatever player since clever strategy will always pick a direct line only if the random coordinates that's
+Whatever picked cut the streak .
+
+Genius player strategy : same as Clever strategy but it always pick the second coordinates which it's right
+next to the one Clever picked , And then it will cut the streak and reset the counter of the winstreak for the
+cleaver player , And in order to achieve the win it will put marks vertically .
