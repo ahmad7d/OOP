@@ -1,0 +1,98 @@
+abedalk.nassar,ahmad_dall7
+207063108,324059856
+
+
+
+explain role of each class ;
+
+
+The SubImgCharMatcher efficiently matches characters based on brightness within a predefined set, utilizing
+CharConverter for binary analysis. The core method, getCharByImageBrightness, iterates through the charset,
+calculating and normalizing brightness values to find the character with the closest brightness to a target.
+Dynamic character set changes are supported via addChar and removeChar methods. Crucial normalization is
+facilitated by methods like getMax and getMin, ensuring adaptability in handling dynamic changes. In essence,
+SubImgCharMatcher provides a streamlined, adaptable solution for brightness-driven character
+matching with a focus on efficiency in matrix conversions and brightness normalization.
+
+The Image package encapsulates a robust suite of classes designed for seamless and efficient
+image processing.At its core, the Image class provides essential functionality for image manipulation,
+including loading from files,pixel retrieval, and saving. The Resize class extends the package's
+capabilities by offering dynamic resizing withaspect ratio preservation and intelligent handling of added
+space through the addition of white pixels. Adding to the package's versatility, the GreyPixel class
+specializes in computing the average grayscale value of an image,employing weighted factors for accurate
+representation. Completing the set, the SubImages class empowers developerswith image segmentation,
+breaking down images into smaller, manageable sub-images stored as 2D color arrays. This
+comprehensive package stands as an adaptable and user-friendly solution for a myriad of image processing
+tasks,promoting modular design and easy integration into diverse projects.
+
+The ascii_art package is a comprehensive solution for generating ASCII art representations from
+images, providing a set of classes that facilitate the conversion process. At its core is the
+AsciiArtAlgorithm class, responsible for translating an input image into a two-dimensional array of
+characters, effectively creating an ASCII art representation. The algorithm takes into account
+user-defined parameters such as resolution and character set.
+It utilizes sub-image partitioning, brightness calculations, and character matching through the
+SubImages, GreyPixel, and SubImgCharMatcher classes, respectively. The package also includes a Shell
+class, serving as a user-friendly interface for interacting with the ASCII art generation functionality.
+Users can manipulate the character set,adjust the image resolution, and choose the output mode
+(console or HTML). The Shell class handles user input,executes the algorithm, and provides a mechanism to
+catch and handle exceptions, ensuring a smooth user experience.Overall, the ascii_art package
+encapsulates a robust ASCII art generation system with customizable options and clear
+user guidance.
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+Data structures explanations :
+
+In various classes across the project, including SubImgCharMatcher, SubImages, and others, LinkedHashSet and
+Sets are employed to manage dynamic collections of elements. The use of LinkedHashSet provides flexibility
+and ease of modification for handling sub-images, while Sets offer a consistent approach to working with
+characters.
+Hashmaps are utilized for storing characters and their corresponding brightness values, facilitating efficient
+updates.These data structures contribute to the overall adaptability of the code, ensuring efficient storage,
+retrieval, and manipulation of elements in different contexts within the ASCII art generation algorithm.
+The design choice of using LinkedHashSet, Sets, and Hashmaps enables constant time complexity (O(1)) for add,
+remove, and find  operations, providing optimal performance in managing dynamic changes within the ASCII art
+generation process. While iterating over all elements may incur a linear time complexity (O(n)), the chosen
+data structures optimize key operations for dynamic updates.
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+how catching exceptions handled :
+
+In the Shell class, we utilize try-catch blocks to manage potential IOExceptions. When the user issues a
+command, the program verifies its legality. If the command is valid, the associated functionality is executed
+within the try block. If the functionality encounters an issue, resulting in an IOException, the catch block
+catches the exception. Subsequently, the program handles the IOException by printing an informative
+message, providing guidance to the user. This structured approach ensures robust error handling and
+enhances the user experience.
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+Additional public methods
+
+The SubImgCharMatcher class in the image_char_matching package implements an API for efficient character
+matching based on brightness within a predefined character set. It extends the CharConverter class and
+incorporates methods such as getCharByImageBrightness for retrieving characters based on image brightness.
+The class supports  dynamic updates to the character set through the addChar and removeChar methods,
+allowing for adaptability. Additionally, the printAllChars function provides a utility to output all
+characters in the current character set, aiding in debugging and visualizing the set's contents
+ during runtime.
+The core functionality revolves around normalizing brightness values, calculating distances,
+and determining the closest character to a target brightness. Overall, SubImgCharMatcher offers a streamlined
+and adaptable solution for brightness-driven character matching, promoting efficiency in matrix
+conversions and brightness normalization while facilitating dynamic character set changes.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+API changes :
+
+In the image package, modifications were made to the Image class to introduce additional functions
+facilitating the calculation of sub-images, brightness, and grayscale values for each pixel. These
+enhancements aimed to augment the functionality of the Image class, providing valuable capabilities
+for subsequent processes such as sub-image partitioning and grayscale computations essential for
+image processing tasks within the ASCII art generation system. These additions contribute to a more
+comprehensive and versatile suite of tools within the image package, supportingseamless integration
+into diverse image processing scenarios.
